@@ -18,25 +18,41 @@
 }
 
 body{
-    background:#050505;
+    background:
+    linear-gradient(
+        rgba(5,5,8,0.72),
+        rgba(3,3,5,0.88)
+    ),
+    url('https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?q=80&w=2200&auto=format&fit=crop');
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
     color:white;
     font-family:'Pretendard', sans-serif;
+
     overflow-x:hidden;
 }
 
-/* 배경 */
+/* 은은한 필름 느낌 */
 
 body::before{
     content:'';
+
     position:fixed;
     inset:0;
 
     background:
-    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 35%),
-    radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 35%),
-    linear-gradient(to bottom, #0d0d0d, #020202);
+    radial-gradient(circle at top left,
+    rgba(255,255,255,0.08),
+    transparent 35%),
 
-    z-index:-2;
+    radial-gradient(circle at bottom right,
+    rgba(255,255,255,0.04),
+    transparent 30%);
+
+    z-index:-1;
 }
 
 /* 전체 */
@@ -56,20 +72,23 @@ body::before{
 /* 로고 */
 
 .logo{
-    font-size:4rem;
+    font-size:4.2rem;
     font-weight:700;
-    letter-spacing:12px;
 
-    margin-bottom:10px;
+    letter-spacing:14px;
 
-    text-shadow:0 0 20px rgba(255,255,255,0.25);
+    margin-bottom:12px;
+
+    text-shadow:
+    0 0 25px rgba(255,255,255,0.18);
 }
 
 .subtitle{
-    color:rgba(255,255,255,0.55);
-    letter-spacing:4px;
+    color:rgba(255,255,255,0.7);
 
-    margin-bottom:60px;
+    letter-spacing:5px;
+
+    margin-bottom:70px;
 
     font-size:0.95rem;
 }
@@ -81,9 +100,10 @@ body::before{
     max-width:1200px;
 
     display:grid;
+
     grid-template-columns:repeat(2,1fr);
 
-    gap:24px;
+    gap:26px;
 }
 
 /* 카드 */
@@ -93,108 +113,114 @@ body::before{
 
     min-height:250px;
 
-    border-radius:28px;
+    border-radius:30px;
 
     overflow:hidden;
 
     text-decoration:none;
     color:white;
 
-    transition:0.35s ease;
+    transition:0.4s ease;
 
-    border:1px solid rgba(255,255,255,0.08);
+    backdrop-filter:blur(18px);
 
-    background-size:cover;
-    background-position:center;
+    background:rgba(255,255,255,0.08);
+
+    border:1px solid rgba(255,255,255,0.12);
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.25);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:
+    translateY(-10px)
+    scale(1.01);
 
-    border-color:rgba(255,255,255,0.18);
+    background:rgba(255,255,255,0.12);
 
-    box-shadow:0 20px 60px rgba(0,0,0,0.45);
+    border-color:rgba(255,255,255,0.22);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.4);
 }
 
-.card::before{
-    content:'';
+/* 카드별 은은한 색감 */
 
-    position:absolute;
-    inset:0;
-
+.market{
     background:
     linear-gradient(
-        to top,
-        rgba(0,0,0,0.82),
-        rgba(0,0,0,0.15)
+        135deg,
+        rgba(40,70,120,0.30),
+        rgba(255,255,255,0.05)
+    );
+}
+
+.noise{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(80,90,120,0.25),
+        rgba(255,255,255,0.05)
+    );
+}
+
+.emotion{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(120,80,120,0.28),
+        rgba(255,255,255,0.05)
+    );
+}
+
+.paper{
+    background:
+    linear-gradient(
+        135deg,
+        rgba(120,90,60,0.30),
+        rgba(255,255,255,0.05)
     );
 }
 
 /* 카드 내용 */
 
 .card-content{
-    position:relative;
-    z-index:2;
-
     height:100%;
 
     display:flex;
     flex-direction:column;
     justify-content:flex-end;
 
-    padding:30px;
+    padding:34px;
 }
 
 .card small{
-    color:rgba(255,255,255,0.6);
+    color:rgba(255,255,255,0.68);
 
     letter-spacing:2px;
 
-    margin-bottom:10px;
+    margin-bottom:12px;
 
     font-size:0.78rem;
 }
 
 .card h2{
-    font-size:1.8rem;
+    font-size:1.9rem;
+
+    line-height:1.35;
 
     margin-bottom:12px;
 
-    line-height:1.35;
+    font-weight:600;
 }
 
 .card p{
-    color:rgba(255,255,255,0.72);
+    color:rgba(255,255,255,0.76);
 
-    line-height:1.6;
+    line-height:1.7;
 
-    font-size:0.95rem;
-}
-
-/* 각 카드 배경 */
-
-.market{
-    background-image:
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=1600&auto=format&fit=crop');
-}
-
-.noise{
-    background-image:
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop');
-}
-
-.emotion{
-    background-image:
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1511300636408-a63a89df3482?q=80&w=1600&auto=format&fit=crop');
-}
-
-.paper{
-    background-image:
-    linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=1600&auto=format&fit=crop');
+    font-size:0.96rem;
 }
 
 /* 하단 */
@@ -202,11 +228,11 @@ body::before{
 .footer{
     margin-top:70px;
 
-    color:rgba(255,255,255,0.35);
+    color:rgba(255,255,255,0.45);
 
-    font-size:0.85rem;
+    font-size:0.82rem;
 
-    letter-spacing:1px;
+    letter-spacing:2px;
 }
 
 /* 모바일 */
@@ -214,14 +240,15 @@ body::before{
 @media(max-width:768px){
 
     .logo{
-        font-size:2.5rem;
-        letter-spacing:6px;
+        font-size:2.7rem;
+        letter-spacing:7px;
     }
 
     .subtitle{
         text-align:center;
-        line-height:1.6;
-        margin-bottom:40px;
+        line-height:1.7;
+
+        margin-bottom:45px;
     }
 
     .grid{
@@ -233,7 +260,11 @@ body::before{
     }
 
     .card h2{
-        font-size:1.4rem;
+        font-size:1.45rem;
+    }
+
+    .card-content{
+        padding:28px;
     }
 }
 
@@ -253,46 +284,74 @@ body::before{
     <div class="grid">
 
         <!-- 외환시장 이야기 -->
-        <a class="card market" href="https://youtube.com/@skyblueponds" target="_blank">
+        <a class="card market"
+           href="https://youtube.com/@skyblueponds"
+           target="_blank">
+
             <div class="card-content">
+
                 <small>FOREX STORY</small>
+
                 <h2>유귀의 외환시장 이야기</h2>
+
                 <p>
                     세계 경제와 환율 흐름을 쉽고 깊이 있게.
                 </p>
+
             </div>
         </a>
 
         <!-- 백색소음 -->
-        <a class="card noise" href="https://youtube.com/@pdkhhh" target="_blank">
+        <a class="card noise"
+           href="https://youtube.com/@pdkhhh"
+           target="_blank">
+
             <div class="card-content">
+
                 <small>WHITE NOISE</small>
+
                 <h2>유귀의 백색소음</h2>
+
                 <p>
                     세상의 모든 익숙한 소음들.
                 </p>
+
             </div>
         </a>
 
         <!-- 감정 -->
-        <a class="card emotion" href="https://youtube.com/@return-yugui" target="_blank">
+        <a class="card emotion"
+           href="https://youtube.com/@return-yugui"
+           target="_blank">
+
             <div class="card-content">
+
                 <small>EMOTIONAL MUSIC</small>
+
                 <h2>유귀 - 고요히 되돌아오는 감정</h2>
+
                 <p>
                     잊고 있던 감정이 조용히 스며드는 음악.
                 </p>
+
             </div>
         </a>
 
         <!-- 종이와 커피 -->
-        <a class="card paper" href="https://youtube.com/@paperncoffee" target="_blank">
+        <a class="card paper"
+           href="https://youtube.com/@paperncoffee"
+           target="_blank">
+
             <div class="card-content">
+
                 <small>JAZZ & CAFE</small>
+
                 <h2>종이와커피 (째쯔)</h2>
+
                 <p>
                     커피향과 함께 흐르는 따뜻한 재즈와 음악들.
                 </p>
+
             </div>
         </a>
 
