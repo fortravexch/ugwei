@@ -36,17 +36,18 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.12),
-        rgba(0,0,0,0.35)
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.42)
     ),
     url('ugweibg.jpg');
 
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
+    background-attachment:fixed;
 }
 
-/* 은은한 빛 */
+/* 은은한 금빛 */
 
 body::before{
 
@@ -59,14 +60,14 @@ body::before{
 
     radial-gradient(
         circle at top left,
-        rgba(255,220,170,0.10),
-        transparent 25%
+        rgba(255,220,170,0.12),
+        transparent 28%
     ),
 
     radial-gradient(
         circle at bottom right,
-        rgba(255,255,255,0.05),
-        transparent 25%
+        rgba(255,255,255,0.04),
+        transparent 24%
     );
 
     pointer-events:none;
@@ -87,7 +88,7 @@ body::before{
     justify-content:center;
     align-items:center;
 
-    padding:24px;
+    padding:26px;
 }
 
 /* =========================
@@ -104,8 +105,10 @@ body::before{
 
     margin-bottom:42px;
 
+    color:#fff8ec;
+
     text-shadow:
-    0 0 25px rgba(255,220,170,0.28);
+    0 0 30px rgba(255,220,170,0.25);
 }
 
 /* =========================
@@ -115,7 +118,7 @@ body::before{
 .grid{
 
     width:100%;
-    max-width:1200px;
+    max-width:1280px;
 
     display:grid;
 
@@ -133,9 +136,9 @@ body::before{
 
     position:relative;
 
-    min-height:260px;
+    min-height:320px;
 
-    border-radius:30px;
+    border-radius:34px;
 
     overflow:hidden;
 
@@ -143,22 +146,22 @@ body::before{
     color:white;
 
     background:
-    rgba(20,20,20,0.14);
+    rgba(18,18,20,0.16);
 
     backdrop-filter:
-    blur(10px);
+    blur(12px);
 
     border:
-    1px solid rgba(255,210,140,0.30);
-
-    box-shadow:
-    0 10px 40px rgba(0,0,0,0.18);
+    1px solid rgba(255,220,160,0.26);
 
     transition:
     0.35s ease;
+
+    box-shadow:
+    0 10px 40px rgba(0,0,0,0.16);
 }
 
-/* 내부 금빛 */
+/* 내부 광택 */
 
 .card::before{
 
@@ -169,7 +172,7 @@ body::before{
 
     background:
     linear-gradient(
-        145deg,
+        160deg,
         rgba(255,220,160,0.05),
         rgba(255,255,255,0.01)
     );
@@ -182,21 +185,21 @@ body::before{
 .card:hover{
 
     transform:
-    translateY(-6px)
+    translateY(-7px)
     scale(1.015);
 
     border-color:
-    rgba(255,220,160,0.65);
+    rgba(255,220,160,0.55);
 
     background:
-    rgba(30,30,30,0.20);
+    rgba(25,25,30,0.22);
 
     box-shadow:
-    0 20px 60px rgba(0,0,0,0.28);
+    0 20px 70px rgba(0,0,0,0.28);
 }
 
 /* =========================
-   카드 내용
+   카드 내부
 ========================= */
 
 .card-content{
@@ -214,50 +217,137 @@ body::before{
 
     text-align:center;
 
-    padding:24px;
+    padding:28px 22px;
 }
 
-/* 아이콘 */
+/* =========================
+   아이콘
+========================= */
 
-.icon{
+.icon-wrap{
 
-    font-size:2.5rem;
+    width:88px;
+    height:88px;
 
-    margin-bottom:20px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
+    margin-bottom:24px;
+
+    border-radius:24px;
+
+    background:
+    rgba(255,220,160,0.04);
+
+    border:
+    1px solid rgba(255,220,160,0.10);
+
+    backdrop-filter:blur(8px);
+}
+
+/* 달러 엔 */
+
+.currency{
+
+    position:relative;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+    color:#f0d3a0;
+
+    font-weight:600;
+
+    font-size:2.6rem;
+}
+
+.currency span:last-child{
+
+    opacity:0.88;
+}
+
+/* 웨이브 */
+
+.wave{
+
+    display:flex;
+    align-items:center;
+    gap:4px;
+}
+
+.wave div{
+
+    width:4px;
+
+    border-radius:999px;
+
+    background:#f0d3a0;
+}
+
+.wave div:nth-child(1){height:14px;}
+.wave div:nth-child(2){height:28px;}
+.wave div:nth-child(3){height:42px;}
+.wave div:nth-child(4){height:24px;}
+.wave div:nth-child(5){height:52px;}
+.wave div:nth-child(6){height:24px;}
+.wave div:nth-child(7){height:42px;}
+.wave div:nth-child(8){height:28px;}
+.wave div:nth-child(9){height:14px;}
+
+/* 달 */
+
+.moon{
+
+    font-size:3rem;
     color:#f0d3a0;
 }
 
-/* 제목 */
+/* 커피 */
+
+.coffee{
+
+    font-size:3rem;
+    color:#f0d3a0;
+}
+
+/* =========================
+   제목
+========================= */
 
 .card h2{
 
-    font-size:1.4rem;
+    font-size:1.38rem;
 
     line-height:1.5;
 
     font-weight:500;
 
-    margin-bottom:18px;
+    margin-bottom:16px;
+
+    color:#fffaf2;
 }
 
 /* 설명 */
 
 .card p{
 
-    color:
-    rgba(255,255,255,0.72);
+    font-size:0.82rem;
 
     line-height:1.7;
 
-    font-size:0.84rem;
+    color:
+    rgba(255,255,255,0.72);
 }
 
 /* 버튼 */
 
 .button{
 
-    margin-top:24px;
+    margin-top:26px;
 
     padding:
     11px 24px;
@@ -265,16 +355,16 @@ body::before{
     border-radius:999px;
 
     border:
-    1px solid rgba(255,220,160,0.35);
+    1px solid rgba(255,220,160,0.32);
 
     background:
     rgba(255,220,160,0.04);
 
     color:#f3dfbd;
 
-    font-size:0.8rem;
+    font-size:0.76rem;
 
-    letter-spacing:1px;
+    letter-spacing:1.5px;
 
     transition:0.3s ease;
 }
@@ -284,10 +374,10 @@ body::before{
 .card:hover .button{
 
     background:
-    rgba(255,220,160,0.10);
+    rgba(255,220,160,0.12);
 
     border-color:
-    rgba(255,220,160,0.55);
+    rgba(255,220,160,0.60);
 }
 
 /* =========================
@@ -307,7 +397,7 @@ body::before{
         height:auto;
 
         padding:
-        40px 14px;
+        34px 14px;
     }
 
     .logo{
@@ -316,7 +406,7 @@ body::before{
 
         letter-spacing:7px;
 
-        margin-bottom:26px;
+        margin-bottom:24px;
     }
 
     .grid{
@@ -329,33 +419,52 @@ body::before{
 
     .card{
 
-        min-height:220px;
+        min-height:235px;
 
-        border-radius:22px;
+        border-radius:24px;
     }
 
     .card-content{
 
-        padding:18px 12px;
+        padding:18px 14px;
     }
 
-    .icon{
+    .icon-wrap{
+
+        width:62px;
+        height:62px;
+
+        border-radius:18px;
+
+        margin-bottom:16px;
+    }
+
+    .currency{
 
         font-size:1.8rem;
+    }
 
-        margin-bottom:14px;
+    .wave{
+
+        transform:scale(0.72);
+    }
+
+    .moon,
+    .coffee{
+
+        font-size:2rem;
     }
 
     .card h2{
 
         font-size:1rem;
 
-        margin-bottom:12px;
+        margin-bottom:10px;
     }
 
     .card p{
 
-        font-size:0.66rem;
+        font-size:0.64rem;
 
         line-height:1.55;
     }
@@ -365,9 +474,9 @@ body::before{
         margin-top:16px;
 
         padding:
-        8px 14px;
+        8px 16px;
 
-        font-size:0.65rem;
+        font-size:0.62rem;
     }
 }
 
@@ -396,7 +505,14 @@ body::before{
 
             <div class="card-content">
 
-                <div class="icon">🌍</div>
+                <div class="icon-wrap">
+
+                    <div class="currency">
+                        <span>$</span>
+                        <span>¥</span>
+                    </div>
+
+                </div>
 
                 <h2>
                     유귀의<br>
@@ -423,7 +539,23 @@ body::before{
 
             <div class="card-content">
 
-                <div class="icon">〰️</div>
+                <div class="icon-wrap">
+
+                    <div class="wave">
+
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+
+                    </div>
+
+                </div>
 
                 <h2>
                     유귀의<br>
@@ -450,7 +582,13 @@ body::before{
 
             <div class="card-content">
 
-                <div class="icon">☾</div>
+                <div class="icon-wrap">
+
+                    <div class="moon">
+                        ☾
+                    </div>
+
+                </div>
 
                 <h2>
                     고요히<br>
@@ -477,7 +615,13 @@ body::before{
 
             <div class="card-content">
 
-                <div class="icon">☕</div>
+                <div class="icon-wrap">
+
+                    <div class="coffee">
+                        ☕
+                    </div>
+
+                </div>
 
                 <h2>
                     종이와커피<br>
