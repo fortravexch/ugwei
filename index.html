@@ -1,790 +1,310 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>유귀 | YUGUI</title>
-
 <style>
-
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-}
-
-html,
+}html,
 body{
     width:100%;
     height:100%;
     overflow:hidden;
-
     font-family:
     "Pretendard",
     "Apple SD Gothic Neo",
     sans-serif;
-
     color:white;
-}
-
-/* =========================
+}/* =========================
    배경
 ========================= */
-
 body{
-
     background:
     linear-gradient(
-        rgba(0,0,0,0.10),
-        rgba(0,0,0,0.52)
+        rgba(0,0,0,0.12),
+        rgba(0,0,0,0.35)
     ),
     url('ugweibg.jpg');
-
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    background-attachment:fixed;
-}
-
-/* 분위기 레이어 */
-
+}/* 은은한 빛 */
 body::before{
-
     content:'';
-
     position:fixed;
     inset:0;
-
     background:
-
     radial-gradient(
         circle at top left,
         rgba(255,220,170,0.10),
-        transparent 26%
+        transparent 25%
     ),
-
     radial-gradient(
         circle at bottom right,
-        rgba(255,255,255,0.04),
-        transparent 22%
+        rgba(255,255,255,0.05),
+        transparent 25%
     );
-
     pointer-events:none;
-}
-
-/* =========================
+}/* =========================
    전체
 ========================= */
-
 .container{
-
     width:100%;
     height:100vh;
-
     display:flex;
     flex-direction:column;
-
     justify-content:center;
     align-items:center;
-
-    padding:32px;
-}
-
-/* =========================
-   타이틀
+    padding:24px;
+}/* =========================
+   로고
 ========================= */
-
-.hero{
-
-    text-align:center;
-
-    margin-bottom:52px;
-}
-
 .logo{
-
-    font-size:5rem;
-
+    font-size:4.8rem;
     font-weight:700;
-
-    letter-spacing:16px;
-
-    color:#fff8ef;
-
-    margin-bottom:12px;
-
+    letter-spacing:14px;
+    margin-bottom:42px;
     text-shadow:
-    0 0 38px rgba(255,220,170,0.20);
-}
-
-.hero-line{
-
-    width:120px;
-    height:1px;
-
-    margin:0 auto 16px auto;
-
-    background:
-    linear-gradient(
-        to right,
-        transparent,
-        rgba(255,220,170,0.75),
-        transparent
-    );
-}
-
-.hero-sub{
-
-    font-size:1rem;
-
-    font-weight:300;
-
-    letter-spacing:3px;
-
-    color:
-    rgba(255,245,230,0.82);
-
-    line-height:1.8;
-}
-
-.hero-sub span{
-
-    color:#f1d29c;
-}
-
-/* =========================
+    0 0 25px rgba(255,220,170,0.28);
+}/* =========================
    카드 영역
 ========================= */
-
 .grid{
-
     width:100%;
-    max-width:1320px;
-
+    max-width:1200px;
     display:grid;
-
     grid-template-columns:
     repeat(4,1fr);
-
-    gap:22px;
-}
-
-/* =========================
+    gap:18px;
+}/* =========================
    카드
 ========================= */
-
 .card{
-
     position:relative;
-
-    height:400px;
-
-    border-radius:34px;
-
+    min-height:260px;
+    border-radius:30px;
     overflow:hidden;
-
     text-decoration:none;
     color:white;
-
-    transition:0.4s ease;
-
-    border:
-    1px solid rgba(255,220,170,0.16);
-
     background:
-    linear-gradient(
-        180deg,
-        rgba(255,255,255,0.05),
-        rgba(255,255,255,0.015)
-    );
-
-    backdrop-filter:blur(14px);
-
+    rgba(20,20,20,0.14);
+    backdrop-filter:
+    blur(10px);
+    border:
+    1px solid rgba(255,210,140,0.30);
     box-shadow:
-    0 10px 45px rgba(0,0,0,0.16);
-}
-
-/* 카드 안쪽 광택 */
-
+    0 10px 40px rgba(0,0,0,0.18);
+    transition:
+    0.35s ease;
+}/* 내부 금빛 */
 .card::before{
-
     content:'';
-
     position:absolute;
     inset:0;
-
     background:
     linear-gradient(
-        to bottom,
-        rgba(255,220,170,0.04),
-        rgba(0,0,0,0.16)
+        145deg,
+        rgba(255,220,160,0.05),
+        rgba(255,255,255,0.01)
     );
-}
-
-/* 상단 골드라인 */
-
-.card::after{
-
-    content:'';
-
-    position:absolute;
-
-    top:0;
-    left:0;
-
-    width:100%;
-    height:1px;
-
-    background:
-    linear-gradient(
-        to right,
-        transparent,
-        rgba(255,220,170,0.75),
-        transparent
-    );
-}
-
-/* 호버 */
-
+    pointer-events:none;
+}/* 호버 */
 .card:hover{
-
     transform:
-    translateY(-8px);
-
+    translateY(-6px)
+    scale(1.015);
     border-color:
-    rgba(255,220,170,0.34);
-
+    rgba(255,220,160,0.65);
     background:
-    linear-gradient(
-        180deg,
-        rgba(255,255,255,0.07),
-        rgba(255,255,255,0.02)
-    );
-
+    rgba(30,30,30,0.20);
     box-shadow:
-    0 25px 70px rgba(0,0,0,0.28);
-}
-
-/* =========================
-   카드 내부
+    0 20px 60px rgba(0,0,0,0.28);
+}/* =========================
+   카드 내용
 ========================= */
-
 .card-content{
-
     position:relative;
     z-index:2;
-
-    width:100%;
     height:100%;
-
     display:flex;
     flex-direction:column;
-
-    justify-content:space-between;
-
-    padding:34px 30px;
-}
-
-/* =========================
-   아이콘
-========================= */
-
-.top{
-
-    display:flex;
-    justify-content:flex-start;
-}
-
-/* 외환 */
-
-.fx{
-
-    display:flex;
-    align-items:flex-end;
-
-    gap:6px;
-
-    color:#f1d29c;
-}
-
-.fx .dollar{
-
-    font-size:3.2rem;
-
-    line-height:1;
-}
-
-.fx .yen{
-
-    font-size:2.2rem;
-
-    opacity:0.72;
-}
-
-/* 웨이브 */
-
-.wave{
-
-    display:flex;
-    align-items:center;
-
-    gap:5px;
-
-    height:64px;
-}
-
-.wave span{
-
-    width:4px;
-
-    border-radius:999px;
-
-    background:#f1d29c;
-}
-
-.wave span:nth-child(1){height:14px;}
-.wave span:nth-child(2){height:24px;}
-.wave span:nth-child(3){height:42px;}
-.wave span:nth-child(4){height:24px;}
-.wave span:nth-child(5){height:56px;}
-.wave span:nth-child(6){height:24px;}
-.wave span:nth-child(7){height:42px;}
-.wave span:nth-child(8){height:24px;}
-.wave span:nth-child(9){height:14px;}
-
-/* 달 */
-
-.moon{
-
-    font-size:3.4rem;
-
-    color:#f1d29c;
-}
-
-/* 커피 */
-
-.coffee{
-
-    font-size:3.2rem;
-
-    color:#f1d29c;
-}
-
-/* =========================
-   텍스트
-========================= */
-
-.middle{
-
-    margin-top:auto;
-}
-
-.card h2{
-
-    font-size:1.55rem;
-
-    line-height:1.45;
-
-    font-weight:500;
-
-    margin-bottom:14px;
-
-    color:#fffaf4;
-}
-
-.card p{
-
-    font-size:0.9rem;
-
-    line-height:1.8;
-
-    color:
-    rgba(255,255,255,0.68);
-}
-
-/* =========================
-   버튼
-========================= */
-
-.bottom{
-
-    margin-top:30px;
-}
-
-.enter{
-
-    display:inline-flex;
-
-    align-items:center;
     justify-content:center;
-
+    align-items:center;
+    text-align:center;
+    padding:24px;
+}/* 아이콘 */
+.icon{
+    font-size:2.5rem;
+    margin-bottom:20px;
+    color:#f0d3a0;
+}/* 제목 */
+.card h2{
+    font-size:1.4rem;
+    line-height:1.5;
+    font-weight:500;
+    margin-bottom:18px;
+}/* 설명 */
+.card p{
+    color:
+    rgba(255,255,255,0.72);
+    line-height:1.7;
+    font-size:0.84rem;
+}/* 버튼 */
+.button{
+    margin-top:24px;
     padding:
-    12px 22px;
-
+    11px 24px;
     border-radius:999px;
-
     border:
-    1px solid rgba(255,220,170,0.22);
-
+    1px solid rgba(255,220,160,0.35);
     background:
-    rgba(255,220,170,0.04);
-
-    color:#f3dfbc;
-
-    font-size:0.74rem;
-
-    letter-spacing:2px;
-
-    transition:0.35s ease;
-}
-
-.card:hover .enter{
-
+    rgba(255,220,160,0.04);
+    color:#f3dfbd;
+    font-size:0.8rem;
+    letter-spacing:1px;
+    transition:0.3s ease;
+}/* 버튼 호버 */
+.card:hover .button{
     background:
-    rgba(255,220,170,0.12);
-
+    rgba(255,220,160,0.10);
     border-color:
-    rgba(255,220,170,0.58);
-
-    transform:
-    translateX(5px);
-}
-
-/* =========================
+    rgba(255,220,160,0.55);
+}/* =========================
    모바일
 ========================= */
-
 @media(max-width:900px){
-
     html,
     body{
         height:auto;
         overflow:auto;
     }
-
     .container{
-
         height:auto;
-
         padding:
-        36px 14px;
+        40px 14px;
     }
-
-    .hero{
-
+    .logo{
+        font-size:2.8rem;
+        letter-spacing:7px;
         margin-bottom:26px;
     }
-
-    .logo{
-
-        font-size:2.8rem;
-
-        letter-spacing:8px;
-
-        margin-bottom:8px;
-    }
-
-    .hero-line{
-
-        width:80px;
-
-        margin-bottom:10px;
-    }
-
-    .hero-sub{
-
-        font-size:0.72rem;
-
-        letter-spacing:1px;
-
-        line-height:1.7;
-    }
-
     .grid{
-
         grid-template-columns:
         repeat(2,1fr);
-
         gap:12px;
     }
-
     .card{
-
-        height:245px;
-
-        border-radius:24px;
+        min-height:220px;
+        border-radius:22px;
     }
-
     .card-content{
-
-        padding:20px 16px;
+        padding:18px 12px;
     }
-
-    .fx .dollar{
-
-        font-size:2rem;
+    .icon{
+        font-size:1.8rem;
+        margin-bottom:14px;
     }
-
-    .fx .yen{
-
-        font-size:1.4rem;
-    }
-
-    .wave{
-
-        transform:scale(0.72);
-        transform-origin:left center;
-    }
-
-    .moon{
-
-        font-size:2.2rem;
-    }
-
-    .coffee{
-
-        font-size:2.1rem;
-    }
-
     .card h2{
-
         font-size:1rem;
-
-        margin-bottom:10px;
+        margin-bottom:12px;
     }
-
     .card p{
-
         font-size:0.66rem;
-
         line-height:1.55;
     }
-
-    .bottom{
-
+    .button{
         margin-top:16px;
-    }
-
-    .enter{
-
         padding:
         8px 14px;
-
-        font-size:0.62rem;
-
-        letter-spacing:1px;
+        font-size:0.65rem;
     }
-}
-
-</style>
+}</style>
 </head>
-
 <body>
-
 <div class="container">
-
-    <!-- 타이틀 -->
-
-    <div class="hero">
-
-        <div class="logo">
-            유귀
-        </div>
-
-        <div class="hero-line"></div>
-
-        <div class="hero-sub">
-            시장과 감정,<br>
-            그리고 고요히 스며드는 <span>한 사람의 이야기</span>
-        </div>
-
+    <!-- 로고 -->
+    <div class="logo">
+        유귀
     </div>
-
     <!-- 카드 -->
-
     <div class="grid">
-
         <!-- 외환 -->
-
         <a class="card"
            href="https://youtube.com/@skyblueponds"
            target="_blank">
-
             <div class="card-content">
-
-                <div class="top">
-
-                    <div class="fx">
-
-                        <div class="dollar">$</div>
-                        <div class="yen">¥</div>
-
-                    </div>
-
+                <div class="icon">🌍</div>
+                <h2>
+                    유귀의<br>
+                    외환시장 이야기
+                </h2>
+                <p>
+                    세계 경제와 환율 흐름
+                </p>
+                <div class="button">
+                    ENTER
                 </div>
-
-                <div class="middle">
-
-                    <h2>
-                        유귀의<br>
-                        외환시장 이야기
-                    </h2>
-
-                    <p>
-                        세계 경제와 환율 흐름
-                    </p>
-
-                </div>
-
-                <div class="bottom">
-
-                    <div class="enter">
-                        ENTER →
-                    </div>
-
-                </div>
-
             </div>
-
         </a>
-
         <!-- 백색소음 -->
-
         <a class="card"
            href="https://youtube.com/@pdkhhh"
            target="_blank">
-
             <div class="card-content">
-
-                <div class="top">
-
-                    <div class="wave">
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </div>
-
+                <div class="icon">〰️</div>
+                <h2>
+                    유귀의<br>
+                    백색소음
+                </h2>
+                <p>
+                    익숙한 소음과 깊은 밤
+                </p>
+                <div class="button">
+                    ENTER
                 </div>
-
-                <div class="middle">
-
-                    <h2>
-                        유귀의<br>
-                        백색소음
-                    </h2>
-
-                    <p>
-                        익숙한 소음과 깊은 밤
-                    </p>
-
-                </div>
-
-                <div class="bottom">
-
-                    <div class="enter">
-                        ENTER →
-                    </div>
-
-                </div>
-
             </div>
-
         </a>
-
         <!-- 감정 -->
-
         <a class="card"
            href="https://youtube.com/@return-yugui"
            target="_blank">
-
             <div class="card-content">
-
-                <div class="top">
-
-                    <div class="moon">
-                        ☾
-                    </div>
-
+                <div class="icon">☾</div>
+                <h2>
+                    고요히<br>
+                    되돌아오는 감정
+                </h2>
+                <p>
+                    잊고 있던 감정의 파동
+                </p>
+                <div class="button">
+                    ENTER
                 </div>
-
-                <div class="middle">
-
-                    <h2>
-                        고요히<br>
-                        되돌아오는 감정
-                    </h2>
-
-                    <p>
-                        잊고 있던 감정의 파동
-                    </p>
-
-                </div>
-
-                <div class="bottom">
-
-                    <div class="enter">
-                        ENTER →
-                    </div>
-
-                </div>
-
             </div>
-
         </a>
-
         <!-- 종이와커피 -->
-
         <a class="card"
            href="https://youtube.com/@paperncoffee"
            target="_blank">
-
             <div class="card-content">
-
-                <div class="top">
-
-                    <div class="coffee">
-                        ☕
-                    </div>
-
+                <div class="icon">☕</div>
+                <h2>
+                    종이와커피<br>
+                    (째쯔)
+                </h2>
+                <p>
+                    따뜻한 재즈와 커피향
+                </p>
+                <div class="button">
+                    ENTER
                 </div>
-
-                <div class="middle">
-
-                    <h2>
-                        종이와커피<br>
-                        (째쯔)
-                    </h2>
-
-                    <p>
-                        따뜻한 재즈와 커피향
-                    </p>
-
-                </div>
-
-                <div class="bottom">
-
-                    <div class="enter">
-                        ENTER →
-                    </div>
-
-                </div>
-
             </div>
-
         </a>
-
     </div>
-
 </div>
-
 </body>
 </html>
