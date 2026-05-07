@@ -17,14 +17,15 @@
 html,
 body{
     width:100%;
-    min-height:100%;
+    height:100%;
+    overflow:hidden;
+
     font-family:
     "Pretendard",
     "Apple SD Gothic Neo",
     sans-serif;
 
     color:white;
-    overflow-x:hidden;
 }
 
 /* =========================
@@ -35,18 +36,17 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.28),
-        rgba(0,0,0,0.62)
+        rgba(0,0,0,0.12),
+        rgba(0,0,0,0.35)
     ),
     url('ugweibg.jpg');
 
     background-size:cover;
     background-position:center;
     background-repeat:no-repeat;
-    background-attachment:fixed;
 }
 
-/* 은은한 광원 */
+/* 은은한 빛 */
 
 body::before{
 
@@ -59,14 +59,14 @@ body::before{
 
     radial-gradient(
         circle at top left,
-        rgba(255,220,170,0.08),
-        transparent 30%
+        rgba(255,220,170,0.10),
+        transparent 25%
     ),
 
     radial-gradient(
         circle at bottom right,
         rgba(255,255,255,0.05),
-        transparent 30%
+        transparent 25%
     );
 
     pointer-events:none;
@@ -79,7 +79,7 @@ body::before{
 .container{
 
     width:100%;
-    min-height:100vh;
+    height:100vh;
 
     display:flex;
     flex-direction:column;
@@ -87,54 +87,25 @@ body::before{
     justify-content:center;
     align-items:center;
 
-    padding:50px 22px;
+    padding:24px;
 }
 
 /* =========================
-   타이틀
+   로고
 ========================= */
-
-.hero{
-
-    text-align:center;
-
-    margin-bottom:48px;
-}
 
 .logo{
 
-    font-size:5rem;
+    font-size:4.8rem;
 
     font-weight:700;
 
     letter-spacing:14px;
 
-    margin-bottom:16px;
+    margin-bottom:42px;
 
     text-shadow:
-    0 0 24px rgba(255,220,170,0.28);
-}
-
-.subtitle{
-
-    font-size:1rem;
-
-    letter-spacing:5px;
-
-    color:
-    rgba(255,255,255,0.76);
-
-    margin-bottom:10px;
-}
-
-.eng{
-
-    font-size:0.8rem;
-
-    letter-spacing:3px;
-
-    color:
-    rgba(255,255,255,0.42);
+    0 0 25px rgba(255,220,170,0.28);
 }
 
 /* =========================
@@ -144,14 +115,14 @@ body::before{
 .grid{
 
     width:100%;
-    max-width:1400px;
+    max-width:1200px;
 
     display:grid;
 
     grid-template-columns:
     repeat(4,1fr);
 
-    gap:24px;
+    gap:18px;
 }
 
 /* =========================
@@ -162,7 +133,7 @@ body::before{
 
     position:relative;
 
-    min-height:390px;
+    min-height:260px;
 
     border-radius:30px;
 
@@ -172,20 +143,22 @@ body::before{
     color:white;
 
     background:
-    rgba(15,15,20,0.28);
+    rgba(20,20,20,0.14);
 
-    backdrop-filter:blur(10px);
+    backdrop-filter:
+    blur(10px);
 
     border:
-    1px solid rgba(255,220,180,0.20);
-
-    transition:0.35s ease;
+    1px solid rgba(255,210,140,0.30);
 
     box-shadow:
-    0 10px 40px rgba(0,0,0,0.22);
+    0 10px 40px rgba(0,0,0,0.18);
+
+    transition:
+    0.35s ease;
 }
 
-/* 내부 빛 */
+/* 내부 금빛 */
 
 .card::before{
 
@@ -196,10 +169,12 @@ body::before{
 
     background:
     linear-gradient(
-        to bottom,
-        rgba(255,220,180,0.03),
-        rgba(0,0,0,0.08)
+        145deg,
+        rgba(255,220,160,0.05),
+        rgba(255,255,255,0.01)
     );
+
+    pointer-events:none;
 }
 
 /* 호버 */
@@ -207,17 +182,17 @@ body::before{
 .card:hover{
 
     transform:
-    translateY(-8px)
+    translateY(-6px)
     scale(1.015);
 
     border-color:
-    rgba(255,220,180,0.42);
+    rgba(255,220,160,0.65);
 
     background:
-    rgba(25,25,35,0.35);
+    rgba(30,30,30,0.20);
 
     box-shadow:
-    0 18px 60px rgba(0,0,0,0.35);
+    0 20px 60px rgba(0,0,0,0.28);
 }
 
 /* =========================
@@ -239,45 +214,31 @@ body::before{
 
     text-align:center;
 
-    padding:34px 26px;
+    padding:24px;
 }
 
 /* 아이콘 */
 
 .icon{
 
-    font-size:3rem;
+    font-size:2.5rem;
 
-    margin-bottom:24px;
+    margin-bottom:20px;
 
     color:#f0d3a0;
-}
-
-/* 영문 */
-
-.card small{
-
-    font-size:0.72rem;
-
-    letter-spacing:2px;
-
-    color:
-    rgba(255,235,205,0.72);
-
-    margin-bottom:18px;
 }
 
 /* 제목 */
 
 .card h2{
 
-    font-size:1.9rem;
+    font-size:1.4rem;
 
-    line-height:1.45;
+    line-height:1.5;
 
     font-weight:500;
 
-    margin-bottom:22px;
+    margin-bottom:18px;
 }
 
 /* 설명 */
@@ -285,89 +246,68 @@ body::before{
 .card p{
 
     color:
-    rgba(255,255,255,0.74);
+    rgba(255,255,255,0.72);
 
-    line-height:1.8;
+    line-height:1.7;
 
-    font-size:0.95rem;
+    font-size:0.84rem;
 }
 
 /* 버튼 */
 
 .button{
 
-    margin-top:32px;
+    margin-top:24px;
 
     padding:
-    14px 30px;
+    11px 24px;
 
     border-radius:999px;
 
     border:
-    1px solid rgba(255,220,180,0.32);
+    1px solid rgba(255,220,160,0.35);
 
     background:
-    rgba(255,255,255,0.03);
+    rgba(255,220,160,0.04);
 
     color:#f3dfbd;
 
-    font-size:0.92rem;
+    font-size:0.8rem;
+
+    letter-spacing:1px;
 
     transition:0.3s ease;
 }
 
+/* 버튼 호버 */
+
 .card:hover .button{
 
     background:
-    rgba(255,220,180,0.10);
+    rgba(255,220,160,0.10);
 
     border-color:
-    rgba(255,220,180,0.55);
-}
-
-/* =========================
-   푸터
-========================= */
-
-.footer{
-
-    margin-top:60px;
-
-    color:
-    rgba(255,255,255,0.36);
-
-    font-size:0.78rem;
-
-    letter-spacing:2px;
-}
-
-/* =========================
-   태블릿
-========================= */
-
-@media(max-width:1100px){
-
-    .grid{
-
-        grid-template-columns:
-        repeat(2,1fr);
-    }
+    rgba(255,220,160,0.55);
 }
 
 /* =========================
    모바일
 ========================= */
 
-@media(max-width:768px){
+@media(max-width:900px){
+
+    html,
+    body{
+        height:auto;
+        overflow:auto;
+    }
 
     .container{
 
-        padding:36px 14px;
-    }
+        height:auto;
 
-    .hero{
-
-        margin-bottom:30px;
+        padding:
+        40px 14px;
     }
 
     .logo{
@@ -375,94 +315,59 @@ body::before{
         font-size:2.8rem;
 
         letter-spacing:7px;
+
+        margin-bottom:26px;
     }
 
-    .subtitle{
-
-        font-size:0.8rem;
-
-        letter-spacing:2px;
-
-        line-height:1.6;
-    }
-
-    .eng{
-
-        font-size:0.62rem;
-
-        line-height:1.5;
-    }
-
-    /* 핵심 */
     .grid{
 
         grid-template-columns:
         repeat(2,1fr);
 
-        gap:14px;
+        gap:12px;
     }
 
     .card{
 
-        min-height:240px;
+        min-height:220px;
 
         border-radius:22px;
     }
 
     .card-content{
 
-        padding:20px 14px;
+        padding:18px 12px;
     }
 
     .icon{
 
-        font-size:1.9rem;
+        font-size:1.8rem;
 
-        margin-bottom:16px;
-    }
-
-    .card small{
-
-        font-size:0.52rem;
-
-        letter-spacing:1px;
-
-        margin-bottom:10px;
+        margin-bottom:14px;
     }
 
     .card h2{
 
         font-size:1rem;
 
-        line-height:1.45;
-
         margin-bottom:12px;
     }
 
     .card p{
 
-        font-size:0.68rem;
+        font-size:0.66rem;
 
         line-height:1.55;
     }
 
     .button{
 
-        margin-top:18px;
+        margin-top:16px;
 
         padding:
-        9px 16px;
+        8px 14px;
 
-        font-size:0.68rem;
-    }
-
-    .footer{
-
-        margin-top:40px;
-
-        text-align:center;
-
-        font-size:0.62rem;
+        font-size:0.65rem;
     }
 }
 
@@ -473,27 +378,17 @@ body::before{
 
 <div class="container">
 
-    <!-- 타이틀 -->
+    <!-- 로고 -->
 
-    <div class="hero">
-
-        <div class="logo">유귀</div>
-
-        <div class="subtitle">
-            감정 · 시장 · 소리 · 재즈
-        </div>
-
-        <div class="eng">
-            EMOTION · MARKET · SOUND · JAZZ
-        </div>
-
+    <div class="logo">
+        유귀
     </div>
 
     <!-- 카드 -->
 
     <div class="grid">
 
-        <!-- 외환시장 -->
+        <!-- 외환 -->
 
         <a class="card"
            href="https://youtube.com/@skyblueponds"
@@ -503,20 +398,17 @@ body::before{
 
                 <div class="icon">🌍</div>
 
-                <small>FOREX STORY</small>
-
                 <h2>
                     유귀의<br>
                     외환시장 이야기
                 </h2>
 
                 <p>
-                    세계 경제와 환율 흐름을<br>
-                    쉽고 깊이 있게.
+                    세계 경제와 환율 흐름
                 </p>
 
                 <div class="button">
-                    바로가기 →
+                    ENTER
                 </div>
 
             </div>
@@ -533,20 +425,17 @@ body::before{
 
                 <div class="icon">〰️</div>
 
-                <small>WHITE NOISE</small>
-
                 <h2>
                     유귀의<br>
                     백색소음
                 </h2>
 
                 <p>
-                    세상의 모든<br>
-                    익숙한 소음들.
+                    익숙한 소음과 깊은 밤
                 </p>
 
                 <div class="button">
-                    바로가기 →
+                    ENTER
                 </div>
 
             </div>
@@ -563,20 +452,17 @@ body::before{
 
                 <div class="icon">☾</div>
 
-                <small>EMOTIONAL MUSIC</small>
-
                 <h2>
-                    유귀 - 고요히<br>
+                    고요히<br>
                     되돌아오는 감정
                 </h2>
 
                 <p>
-                    잊고 있던 감정이<br>
-                    조용히 스며드는 음악.
+                    잊고 있던 감정의 파동
                 </p>
 
                 <div class="button">
-                    바로가기 →
+                    ENTER
                 </div>
 
             </div>
@@ -593,32 +479,23 @@ body::before{
 
                 <div class="icon">☕</div>
 
-                <small>JAZZ & CAFE</small>
-
                 <h2>
                     종이와커피<br>
                     (째쯔)
                 </h2>
 
                 <p>
-                    커피향과 함께 흐르는<br>
-                    따뜻한 재즈와 음악들.
+                    따뜻한 재즈와 커피향
                 </p>
 
                 <div class="button">
-                    바로가기 →
+                    ENTER
                 </div>
 
             </div>
 
         </a>
 
-    </div>
-
-    <!-- 푸터 -->
-
-    <div class="footer">
-        © YUGUI ALL RIGHTS RESERVED.
     </div>
 
 </div>
