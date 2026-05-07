@@ -6,9 +6,6 @@
 
 <title>유귀 | YUGUI</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <style>
 
 *{
@@ -17,7 +14,8 @@
     box-sizing:border-box;
 }
 
-html,body{
+html,
+body{
     width:100%;
     height:100%;
     overflow:hidden;
@@ -38,8 +36,8 @@ body{
 
     background:
     linear-gradient(
-        rgba(0,0,0,0.12),
-        rgba(0,0,0,0.48)
+        rgba(0,0,0,0.10),
+        rgba(0,0,0,0.52)
     ),
     url('ugweibg.jpg');
 
@@ -49,7 +47,7 @@ body{
     background-attachment:fixed;
 }
 
-/* 시네마 느낌 */
+/* 분위기 레이어 */
 
 body::before{
 
@@ -63,16 +61,14 @@ body::before{
     radial-gradient(
         circle at top left,
         rgba(255,220,170,0.10),
-        transparent 25%
+        transparent 26%
     ),
 
     radial-gradient(
         circle at bottom right,
         rgba(255,255,255,0.04),
-        transparent 24%
+        transparent 22%
     );
-
-    backdrop-filter:blur(1px);
 
     pointer-events:none;
 }
@@ -92,12 +88,19 @@ body::before{
     justify-content:center;
     align-items:center;
 
-    padding:26px;
+    padding:32px;
 }
 
 /* =========================
-   로고
+   타이틀
 ========================= */
+
+.hero{
+
+    text-align:center;
+
+    margin-bottom:52px;
+}
 
 .logo{
 
@@ -107,16 +110,51 @@ body::before{
 
     letter-spacing:16px;
 
-    margin-bottom:52px;
-
     color:#fff8ef;
 
+    margin-bottom:12px;
+
     text-shadow:
-    0 0 40px rgba(255,220,170,0.22);
+    0 0 38px rgba(255,220,170,0.20);
+}
+
+.hero-line{
+
+    width:120px;
+    height:1px;
+
+    margin:0 auto 16px auto;
+
+    background:
+    linear-gradient(
+        to right,
+        transparent,
+        rgba(255,220,170,0.75),
+        transparent
+    );
+}
+
+.hero-sub{
+
+    font-size:1rem;
+
+    font-weight:300;
+
+    letter-spacing:3px;
+
+    color:
+    rgba(255,245,230,0.82);
+
+    line-height:1.8;
+}
+
+.hero-sub span{
+
+    color:#f1d29c;
 }
 
 /* =========================
-   카드
+   카드 영역
 ========================= */
 
 .grid{
@@ -132,20 +170,24 @@ body::before{
     gap:22px;
 }
 
+/* =========================
+   카드
+========================= */
+
 .card{
 
     position:relative;
 
-    height:420px;
+    height:400px;
 
-    border-radius:38px;
+    border-radius:34px;
 
     overflow:hidden;
 
     text-decoration:none;
     color:white;
 
-    transition:0.45s ease;
+    transition:0.4s ease;
 
     border:
     1px solid rgba(255,220,170,0.16);
@@ -154,16 +196,16 @@ body::before{
     linear-gradient(
         180deg,
         rgba(255,255,255,0.05),
-        rgba(255,255,255,0.02)
+        rgba(255,255,255,0.015)
     );
 
     backdrop-filter:blur(14px);
 
     box-shadow:
-    0 10px 50px rgba(0,0,0,0.18);
+    0 10px 45px rgba(0,0,0,0.16);
 }
 
-/* 카드 내부 분위기 */
+/* 카드 안쪽 광택 */
 
 .card::before{
 
@@ -176,11 +218,11 @@ body::before{
     linear-gradient(
         to bottom,
         rgba(255,220,170,0.04),
-        rgba(0,0,0,0.18)
+        rgba(0,0,0,0.16)
     );
 }
 
-/* 위 금빛 라인 */
+/* 상단 골드라인 */
 
 .card::after{
 
@@ -198,7 +240,7 @@ body::before{
     linear-gradient(
         to right,
         transparent,
-        rgba(255,220,170,0.65),
+        rgba(255,220,170,0.75),
         transparent
     );
 }
@@ -208,13 +250,20 @@ body::before{
 .card:hover{
 
     transform:
-    translateY(-10px);
+    translateY(-8px);
 
     border-color:
     rgba(255,220,170,0.34);
 
+    background:
+    linear-gradient(
+        180deg,
+        rgba(255,255,255,0.07),
+        rgba(255,255,255,0.02)
+    );
+
     box-shadow:
-    0 25px 80px rgba(0,0,0,0.32);
+    0 25px 70px rgba(0,0,0,0.28);
 }
 
 /* =========================
@@ -234,11 +283,11 @@ body::before{
 
     justify-content:space-between;
 
-    padding:34px 28px;
+    padding:34px 30px;
 }
 
 /* =========================
-   상단 아이콘 영역
+   아이콘
 ========================= */
 
 .top{
@@ -251,36 +300,26 @@ body::before{
 
 .fx{
 
-    position:relative;
+    display:flex;
+    align-items:flex-end;
 
-    width:78px;
-    height:78px;
+    gap:6px;
+
+    color:#f1d29c;
 }
 
 .fx .dollar{
 
-    position:absolute;
+    font-size:3.2rem;
 
-    left:0;
-    top:10px;
-
-    font-size:3.1rem;
-
-    color:#f1d29c;
+    line-height:1;
 }
 
 .fx .yen{
 
-    position:absolute;
+    font-size:2.2rem;
 
-    right:0;
-    bottom:0;
-
-    font-size:2.4rem;
-
-    opacity:0.78;
-
-    color:#f1d29c;
+    opacity:0.72;
 }
 
 /* 웨이브 */
@@ -292,7 +331,7 @@ body::before{
 
     gap:5px;
 
-    height:78px;
+    height:64px;
 }
 
 .wave span{
@@ -302,42 +341,34 @@ body::before{
     border-radius:999px;
 
     background:#f1d29c;
-
-    opacity:0.92;
 }
 
 .wave span:nth-child(1){height:14px;}
-.wave span:nth-child(2){height:28px;}
-.wave span:nth-child(3){height:48px;}
-.wave span:nth-child(4){height:26px;}
-.wave span:nth-child(5){height:60px;}
-.wave span:nth-child(6){height:26px;}
-.wave span:nth-child(7){height:48px;}
-.wave span:nth-child(8){height:28px;}
+.wave span:nth-child(2){height:24px;}
+.wave span:nth-child(3){height:42px;}
+.wave span:nth-child(4){height:24px;}
+.wave span:nth-child(5){height:56px;}
+.wave span:nth-child(6){height:24px;}
+.wave span:nth-child(7){height:42px;}
+.wave span:nth-child(8){height:24px;}
 .wave span:nth-child(9){height:14px;}
 
 /* 달 */
 
 .moon{
 
-    font-size:4rem;
+    font-size:3.4rem;
 
     color:#f1d29c;
-
-    text-shadow:
-    0 0 20px rgba(255,220,170,0.16);
 }
 
 /* 커피 */
 
 .coffee{
 
-    font-size:3.8rem;
+    font-size:3.2rem;
 
     color:#f1d29c;
-
-    text-shadow:
-    0 0 20px rgba(255,220,170,0.12);
 }
 
 /* =========================
@@ -351,20 +382,20 @@ body::before{
 
 .card h2{
 
-    font-size:1.75rem;
+    font-size:1.55rem;
 
     line-height:1.45;
 
     font-weight:500;
 
-    margin-bottom:16px;
+    margin-bottom:14px;
 
-    color:#fff9f2;
+    color:#fffaf4;
 }
 
 .card p{
 
-    font-size:0.92rem;
+    font-size:0.9rem;
 
     line-height:1.8;
 
@@ -378,7 +409,7 @@ body::before{
 
 .bottom{
 
-    margin-top:34px;
+    margin-top:30px;
 }
 
 .enter{
@@ -389,19 +420,19 @@ body::before{
     justify-content:center;
 
     padding:
-    13px 24px;
+    12px 22px;
 
     border-radius:999px;
 
     border:
-    1px solid rgba(255,220,170,0.20);
+    1px solid rgba(255,220,170,0.22);
 
     background:
     rgba(255,220,170,0.04);
 
     color:#f3dfbc;
 
-    font-size:0.78rem;
+    font-size:0.74rem;
 
     letter-spacing:2px;
 
@@ -410,14 +441,14 @@ body::before{
 
 .card:hover .enter{
 
-    border-color:
-    rgba(255,220,170,0.55);
-
     background:
-    rgba(255,220,170,0.10);
+    rgba(255,220,170,0.12);
+
+    border-color:
+    rgba(255,220,170,0.58);
 
     transform:
-    translateX(4px);
+    translateX(5px);
 }
 
 /* =========================
@@ -440,13 +471,34 @@ body::before{
         36px 14px;
     }
 
+    .hero{
+
+        margin-bottom:26px;
+    }
+
     .logo{
 
         font-size:2.8rem;
 
-        letter-spacing:7px;
+        letter-spacing:8px;
 
-        margin-bottom:24px;
+        margin-bottom:8px;
+    }
+
+    .hero-line{
+
+        width:80px;
+
+        margin-bottom:10px;
+    }
+
+    .hero-sub{
+
+        font-size:0.72rem;
+
+        letter-spacing:1px;
+
+        line-height:1.7;
     }
 
     .grid{
@@ -459,7 +511,7 @@ body::before{
 
     .card{
 
-        height:255px;
+        height:245px;
 
         border-radius:24px;
     }
@@ -469,22 +521,30 @@ body::before{
         padding:20px 16px;
     }
 
-    .fx{
-        transform:scale(0.72);
-        transform-origin:left top;
+    .fx .dollar{
+
+        font-size:2rem;
+    }
+
+    .fx .yen{
+
+        font-size:1.4rem;
     }
 
     .wave{
+
         transform:scale(0.72);
         transform-origin:left center;
     }
 
     .moon{
-        font-size:2.5rem;
+
+        font-size:2.2rem;
     }
 
     .coffee{
-        font-size:2.4rem;
+
+        font-size:2.1rem;
     }
 
     .card h2{
@@ -498,18 +558,18 @@ body::before{
 
         font-size:0.66rem;
 
-        line-height:1.6;
+        line-height:1.55;
     }
 
     .bottom{
 
-        margin-top:18px;
+        margin-top:16px;
     }
 
     .enter{
 
         padding:
-        9px 14px;
+        8px 14px;
 
         font-size:0.62rem;
 
@@ -524,9 +584,24 @@ body::before{
 
 <div class="container">
 
-    <div class="logo">
-        유귀
+    <!-- 타이틀 -->
+
+    <div class="hero">
+
+        <div class="logo">
+            유귀
+        </div>
+
+        <div class="hero-line"></div>
+
+        <div class="hero-sub">
+            시장과 감정,<br>
+            그리고 고요히 스며드는 <span>한 사람의 이야기</span>
+        </div>
+
     </div>
+
+    <!-- 카드 -->
 
     <div class="grid">
 
