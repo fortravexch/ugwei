@@ -1,60 +1,63 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>유귀 | 공식 홈</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <div class="logo">유귀</div>
+    <div class="subtitle">
+        감정 · 시장 · 소리 · 재즈
+    </div>
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <div class="grid">
 
-body {
-    font-family: 'Pretendard', sans-serif;
-    background: #050505;
-    color: #ffffff;
-    overflow-x: hidden;
-}
+        <!-- 외환시장 이야기 -->
+        <a class="card market" href="https://youtube.com/@skyblueponds">
+            <div class="card-content">
+                <small>FOREX STORY</small>
+                <h2>유귀의 외환시장 이야기</h2>
+                <p>
+                    세계 경제와 환율 흐름을 쉽고 깊이 있게.
+                </p>
+            </div>
+        </a>
 
-body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background:
-        radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 40%),
-        radial-gradient(circle at bottom right, rgba(255,255,255,0.04), transparent 40%),
-        linear-gradient(to bottom, #0b0b0b, #020202);
-    z-index: -2;
-}
+        <!-- 백색소음 -->
+        <a class="card noise" href="https://youtube.com/@pdkhhh">
+            <div class="card-content">
+                <small>WHITE NOISE</small>
+                <h2>유귀의 백색소음</h2>
+                <p>
+                    세상의 모든 익숙한 소음들.
+                </p>
+            </div>
+        </a>
 
-body::after {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background-image:
-        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-    background-size: 50px 50px;
-    z-index: -1;
-    opacity: 0.2;
-}
+        <!-- 감정 -->
+        <a class="card emotion" href="https://youtube.com/@return-yugui">
+            <div class="card-content">
+                <small>EMOTIONAL MUSIC</small>
+                <h2>유귀 - 고요히 되돌아오는 감정</h2>
+                <p>
+                    잊고 있던 감정이 조용히 스며드는 음악.
+                </p>
+            </div>
+        </a>
 
-.container {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 40px 20px;
-}
+        <!-- 종이와 커피 -->
+        <a class="card paper" href="https://youtube.com/@paperncoffee">
+            <div class="card-content">
+                <small>JAZZ & CAFE</small>
+                <h2>종이와커피 (째쯔)</h2>
+                <p>
+                    커피향과 함께 흐르는 따뜻한 재즈와 음악들.
+                </p>
+            </div>
+        </a>
 
-.logo {
-    font-size: 4rem;
+    </div>
+
+    <div class="footer">
+        © YUGUI ALL RIGHTS RESERVED.
+    </div>
+
+</div>
+
+</body>
 </html>
